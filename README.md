@@ -82,17 +82,17 @@ Los datos estan muy bien balanceados, son 84 divorciados y 86 en matrimonio por 
 
 El primer modelo que utilizamos es **KNeighborsClassifier**, el cual logra muy buenos resultados 97.05 en acuracy y 97.03 en roc_score por lo que hago una matriz de confusión para ver.
 
-![Confusión](https://github.com/rogerzadi/Fraud_Detection_credit_card/blob/master/images/impgra.png)
+![Confusión](https://github.com/rogerzadi/Divorce-Prediction/blob/master/images/conf.png)
 
 Como podemos ver solo tuvo un falso negativo, de igual manera gráfico roc_curve y su probabilidad.
 
-![ROU](https://github.com/rogerzadi/Fraud_Detection_credit_card/blob/master/images/impgra.png)
+![ROU](https://github.com/rogerzadi/Divorce-Prediction/blob/master/images/rou.png)
 
-![ROU PROB](https://github.com/rogerzadi/Fraud_Detection_credit_card/blob/master/images/impgra.png)
+![ROU PROB](https://github.com/rogerzadi/Divorce-Prediction/blob/master/images/prob.png)
 
 Ahora me dispongo a ver cuales son las variables de más importancia, por lo que inicialmente hago una matriz de correlación
 
-![CORR](https://github.com/rogerzadi/Fraud_Detection_credit_card/blob/master/images/impgra.png)
+![CORR](https://github.com/rogerzadi/Divorce-Prediction/blob/master/images/corr.png)
 
 En la cual sale:
 
