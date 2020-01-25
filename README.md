@@ -80,7 +80,7 @@ Se utiliza las siguientes librería:
 
 Los datos estan muy bien balanceados, son 84 divorciados y 86 en matrimonio por lo uqe podemos preceder a alimentar el modelo, antes de eso sume todos los valores de las variables para ver si se encuentra un patrón, el cual si hay, hay preguntas donde solo los divorciados respondian con 0 y otros donde la mayoría de las personas ponian 0.
 
-El primer modelo que utilizamos es **KNeighborsClassifier**, el cual logra muy buenos resultados 97.05 en acuracy y 97.03 en roc_score por lo que hago una matriz de confusión para ver.
+El primer modelo que utilizamos es **KNeighborsClassifier**, el cual logra muy buenos resultados **97.05 en acuracy** y **97.03 en roc_score** por lo que hago una matriz de confusión para ver.
 
 ![Confusión](https://github.com/rogerzadi/Divorce-Prediction/blob/master/images/conf.png)
 
@@ -102,7 +102,7 @@ En la cual sale:
 4. Pregunta 18 con .923208
 5. Pregunta 11 con .918386
 
-De igual manera entrene un modelo de randomForest ya que podemos ver cuales son las variables más importantes en su entrenamiento, cabe destacar que al la muestra (80% de los datos) ser aleatoria puede cambiar algo el orden de imporatncia con la lista anterior.
+De igual manera entrene un modelo de randomForest ya que podemos ver cuales son las variables más importantes en su entrenamiento, cabe destacar que al la muestra (80% de los datos) ser aleatoria puede cambiar algo el orden de importancia con la lista anterior.
 
 1. Pregunta 9 con 0.371991
 2. Pregunta 17 con 0.183089
@@ -112,7 +112,3 @@ De igual manera entrene un modelo de randomForest ya que podemos ver cuales son 
 6. Pregunta 18 con 0.101134
 
 (Este segundo, en total suma 1) 
-
-
-
-
