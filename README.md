@@ -2,8 +2,8 @@
 
 ## Intro
 
-
-El Dataset es obtenido de [Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfraud) 
+El Dataset es obtenido de [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Divorce+Predictors+data+set) 
+En el se encuentran **170 parejas** encuestadas con las siguientes preguntas, en las cuales colocaban una puntuación de 1 a 4 dependiendo la pregunta, como etiqueta se coloca 1 si era divorciado o 0 si no lo era.
 
 1. Si uno de nosotros se disculpa cuando nuestra discusión se deteriora, la discusión termina.
 2. Sé que podemos ignorar nuestras diferencias, incluso si las cosas se ponen difíciles a veces.
@@ -60,5 +60,59 @@ El Dataset es obtenido de [Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfrau
 53. Cuando discuto, le recuerdo a mi esposo/a su insuficiencia.
 54. No tengo miedo de contarle a mi esposo/a sobre su incompetencia.
 
-![Gra](https://github.com/rogerzadi/Fraud_Detection_credit_card/blob/master/images/impgra.png)
+### Modelos Utilizados
+
+Se utiliza las siguientes librería:
+- Pandas
+- Numpy 
+- Seaborn
+- Sklearn (Modelos):
+  - RandomForest
+  - KNeighborsClassifier
+  - SVC
+- Sklearn (Métricas):
+ - Accuracy_score
+ - confusion_matrix
+ - roc_auc_score
+ - recall_score
+
+## Modelo
+
+Los datos estan muy bien balanceados, son 84 divorciados y 86 en matrimonio por lo uqe podemos preceder a alimentar el modelo, antes de eso sume todos los valores de las variables para ver si se encuentra un patrón, el cual si hay, hay preguntas donde solo los divorciados respondian con 0 y otros donde la mayoría de las personas ponian 0.
+
+El primer modelo que utilizamos es **KNeighborsClassifier**, el cual logra muy buenos resultados 97.05 en acuracy y 97.03 en roc_score por lo que hago una matriz de confusión para ver.
+
+![Confusión](https://github.com/rogerzadi/Fraud_Detection_credit_card/blob/master/images/impgra.png)
+
+Como podemos ver solo tuvo un falso negativo, de igual manera gráfico roc_curve y su probabilidad.
+
+![ROU](https://github.com/rogerzadi/Fraud_Detection_credit_card/blob/master/images/impgra.png)
+
+![ROU PROB](https://github.com/rogerzadi/Fraud_Detection_credit_card/blob/master/images/impgra.png)
+
+Ahora me dispongo a ver cuales son las variables de más importancia, por lo que inicialmente hago una matriz de correlación
+
+![CORR](https://github.com/rogerzadi/Fraud_Detection_credit_card/blob/master/images/impgra.png)
+
+En la cual sale:
+
+1. Pregunta 40 con .938684
+2. Pregunta 17 con .929346
+3. Pregunta 19 con .928627
+4. Pregunta 18 con .923208
+5. Pregunta 11 con .918386
+
+De igual manera entrene un modelo de randomForest ya que podemos ver cuales son las variables más importantes en su entrenamiento, cabe destacar que al la muestra (80% de los datos) ser aleatoria puede cambiar algo el orden de imporatncia con la lista anterior.
+
+1. Pregunta 9 con 0.371991
+2. Pregunta 17 con 0.183089
+3. Pregunta 26 con 0.105336
+4. Pregunta 19 con 0.104584
+5. Pregunta 11 con 0.102210
+6. Pregunta 18 con 0.101134
+
+(Este segundo, en total suma 1) 
+
+
+
 
